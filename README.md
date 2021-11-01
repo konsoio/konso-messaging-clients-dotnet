@@ -49,10 +49,11 @@ To send message:
 ```
 await _messagingService.SendAsync(new CreateMessageRequest() 
 { 
-    MessageType = MessageTypes.Email, 
-    Subject = "Test subject", 
-    Recipients = new List<string>() { "test@indevlabs.de" }, 
-    Html = "<h1>Hello</h1>", 
-    Tags = new List<string>() { "test" } 
+    MessageType = MessageTypes.Email, // message type
+    Subject = "Test subject", // subject (applicable for email)
+    Recipients = new List<string>() { "test@indevlabs.de" },  // 
+    Html = "<h1>Hello</h1>", // html pessage,
+    PlainText = "Hello", // plain text message
+    Tags = new List<string>() { "test" } // tags
 });
 ```
