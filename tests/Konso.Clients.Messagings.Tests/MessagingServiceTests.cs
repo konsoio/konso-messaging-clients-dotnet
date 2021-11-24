@@ -11,7 +11,7 @@ namespace Konso.Clients.Messagings.Tests
 {
     public class MessagingServiceTests
     {
-        private const string apiUrl = "https://devapis.konso.io/v1";
+        private const string apiUrl = "https://apis.konso.io";
         private const string bucketId = "<bucketId>";
         private const string apiKey = "<your api key>";
 
