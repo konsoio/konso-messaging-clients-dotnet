@@ -66,7 +66,7 @@ namespace Konso.Clients.Messagings.Services.Requests
                     // serialize request as json
                     var jsonStr = JsonSerializer.Serialize(msg);
                     var httpItem = new StringContent(jsonStr, Encoding.UTF8, "application/json");
-                    var response = await _client.PostAsync($"{_messagingConfig.Endpoint}/v1/messaging/{_messagingConfig.BucketId}", httpItem);
+                    var response = await _client.PostAsync($"{_messagingConfig.Endpoint}/messaging/{_messagingConfig.BucketId}", httpItem);
                     var contents = await response.Content.ReadAsStringAsync();
                     var result = JsonSerializer.Deserialize<GenericResponse<bool>>(contents);
 
@@ -106,7 +106,7 @@ namespace Konso.Clients.Messagings.Services.Requests
                 if (!client.DefaultRequestHeaders.TryAddWithoutValidation("x-api-key", _messagingConfig.ApiKey)) throw new Exception("Missing API key");
 
                 int sortNum = (int)request.Sort;
-                var builder = new UriBuilder($"{_messagingConfig.Endpoint}/v1/messaging_history/{_messagingConfig.BucketId}")
+                var builder = new UriBuilder($"{_messagingConfig.Endpoint}/messaging_history/{_messagingConfig.BucketId}")
                 {
                     Port = -1
                 };
