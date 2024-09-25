@@ -4,6 +4,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Web;
+using Konso.Clients.Messaging.Extensions;
 using Konso.Clients.Messagings.Interfaces;
 using Konso.Clients.Messagings.Model;
 using Konso.Clients.Messagings.Model.Dtos;
@@ -26,6 +27,8 @@ namespace Konso.Clients.Messagings.Services.Requests
             _messagingConfig.ApiKey = configuration.GetValue<string>("Konso:Messaging:ApiKey");
             _messagingConfig.Environment = configuration.GetValue<string>("Konso:Messaging:Env");
             _clientFactory = clientFactory;
+
+            _messagingConfig.Endpoint = _messagingConfig.Endpoint.RemoveTailSlash();
         }
 
         public MessagingService(MessagingConfig messagingConfig, IHttpClientFactory clientFactory)

@@ -1,4 +1,5 @@
-﻿using Konso.Clients.Messaging.Interfaces;
+﻿using Konso.Clients.Messaging.Extensions;
+using Konso.Clients.Messaging.Interfaces;
 using Konso.Clients.Messaging.Model.Dtos;
 using Konso.Clients.Messagings.Model;
 using Microsoft.Extensions.Configuration;
@@ -23,6 +24,7 @@ namespace Konso.Clients.Messaging.Services
             _messagingConfig.BucketId = configuration.GetValue<string>("Konso:Messaging:BucketId");
             _messagingConfig.ApiKey = configuration.GetValue<string>("Konso:Messaging:ApiKey");
             _messagingConfig.Environment = configuration.GetValue<string>("Konso:Messaging:Env");
+            _messagingConfig.Endpoint = _messagingConfig.Endpoint.RemoveTailSlash();
             _clientFactory = clientFactory;
         }
 
