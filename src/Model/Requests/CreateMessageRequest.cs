@@ -15,7 +15,7 @@ namespace Konso.Clients.Messagings.Model
 
         public int Delay { get; set; }
 
-        public MessageTypes MessageType { get; set; }
+        public byte MessageType { get; set; }
 
         public List<string> Tags { get; set; }
 

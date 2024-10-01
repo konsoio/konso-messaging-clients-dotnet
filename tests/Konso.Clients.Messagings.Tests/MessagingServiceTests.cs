@@ -22,7 +22,7 @@ namespace Konso.Clients.Messagings.Tests
             var service = new MessagingService(new MessagingConfig() { ApiKey = apiKey, BucketId = bucketId, Endpoint = apiUrl, Environment = "dev" },
                 new DefaultHttpClientFactory());
 
-            var o = new CreateMessageRequest() {  MessageType = MessageTypes.Email, Subject = "Test subject", Recipients = new List<string>() { "test@indevlabs.de" }, Html = "<h1>Hello</h1>", Tags = new List<string>() { "test" } };
+            var o = new CreateMessageRequest() {  MessageType = (byte)MessageTypes.Email, Subject = "Test subject", Recipients = new List<string>() { "test@indevlabs.de" }, Html = "<h1>Hello</h1>", Tags = new List<string>() { "test" } };
 
             var response = await service.SendAsync(o);
 
@@ -36,7 +36,7 @@ namespace Konso.Clients.Messagings.Tests
             var service = new MessagingService(new MessagingConfig() { ApiKey = apiKey, BucketId = bucketId, Endpoint = apiUrl, Environment = "dev" },
                    new DefaultHttpClientFactory());
 
-            var o = new CreateMessageRequest() { MessageType = MessageTypes.Email, Subject = "Test subject", Recipients = new List<string>() { "test@indevlabs.de" }, Html = "<h1>Hello</h1>",  Tags = new List<string>() { "test" } };
+            var o = new CreateMessageRequest() { MessageType = (byte)MessageTypes.Email, Subject = "Test subject", Recipients = new List<string>() { "test@indevlabs.de" }, Html = "<h1>Hello</h1>",  Tags = new List<string>() { "test" } };
 
             var response = await service.SendAsync(o);
 

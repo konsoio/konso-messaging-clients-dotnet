@@ -4,9 +4,9 @@
 	  <TargetFramework>net5.0</TargetFramework>
 	  <Company>Konso</Company>
 	  <Copyright>Copyright © 2024</Copyright>
-	  <AssemblyVersion>1.1.1</AssemblyVersion>
-	  <FileVersion>1.1.1</FileVersion>
-	  <Version>1.1.1</Version>
+	  <AssemblyVersion>1.1.2</AssemblyVersion>
+	  <FileVersion>1.1.2</FileVersion>
+	  <Version>1.1.2</Version>
   </PropertyGroup>
 
   <ItemGroup>

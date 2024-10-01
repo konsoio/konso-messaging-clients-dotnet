@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Konso.Clients.Messagings.Model.Enums
+﻿namespace Konso.Clients.Messagings.Model.Enums
 {
     public enum MessageTypes
     {
+        NotSet = 0,
         Email = 1,
         Sms = 2,
         Push = 3,
